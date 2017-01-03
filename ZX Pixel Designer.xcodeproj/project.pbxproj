@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991B67CF1E1BD9F20019A82C /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 991B67CE1E1BD9F20019A82C /* ImageModel.m */; };
+		991B67D31E1BDAB20019A82C /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 991B67D21E1BDAB20019A82C /* Action.m */; };
 		99702A8A1E13F0DA00BC83B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99702A891E13F0DA00BC83B9 /* AppDelegate.m */; };
 		99702A8D1E13F0DA00BC83B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99702A8C1E13F0DA00BC83B9 /* main.m */; };
 		99702A901E13F0DB00BC83B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99702A8F1E13F0DB00BC83B9 /* ViewController.m */; };
@@ -20,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		991B67CD1E1BD9F20019A82C /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		991B67CE1E1BD9F20019A82C /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		991B67D11E1BDAB20019A82C /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		991B67D21E1BDAB20019A82C /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
 		99702A851E13F0DA00BC83B9 /* ZX Pixel Designer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZX Pixel Designer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99702A881E13F0DA00BC83B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		99702A891E13F0DA00BC83B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,6 +58,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		991B67CC1E1BD9D80019A82C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				991B67CD1E1BD9F20019A82C /* ImageModel.h */,
+				991B67CE1E1BD9F20019A82C /* ImageModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		991B67D01E1BDA990019A82C /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				991B67D11E1BDAB20019A82C /* Action.h */,
+				991B67D21E1BDAB20019A82C /* Action.m */,
+			);
+			name = Action;
+			sourceTree = "<group>";
+		};
 		99702A7C1E13F0DA00BC83B9 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +137,8 @@
 		99702AA11E14035700BC83B9 /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				991B67D01E1BDA990019A82C /* Action */,
+				991B67CC1E1BD9D80019A82C /* Model */,
 				99702A911E13F0DB00BC83B9 /* Document.h */,
 				99702A921E13F0DB00BC83B9 /* Document.m */,
 			);
@@ -238,8 +264,10 @@
 				99702AA71E141CDE00BC83B9 /* CenteredClipView.m in Sources */,
 				99702A931E13F0DB00BC83B9 /* Document.m in Sources */,
 				99702AAD1E142DC000BC83B9 /* TrackingView.m in Sources */,
+				991B67CF1E1BD9F20019A82C /* ImageModel.m in Sources */,
 				99702A901E13F0DB00BC83B9 /* ViewController.m in Sources */,
 				99702AAA1E1420E800BC83B9 /* DesignerView.m in Sources */,
+				991B67D31E1BDAB20019A82C /* Action.m in Sources */,
 				99702A8D1E13F0DA00BC83B9 /* main.m in Sources */,
 				99702A8A1E13F0DA00BC83B9 /* AppDelegate.m in Sources */,
 			);
@@ -391,6 +419,7 @@
 				99702A9E1E13F0DB00BC83B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

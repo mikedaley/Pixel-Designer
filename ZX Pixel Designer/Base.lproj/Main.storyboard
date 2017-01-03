@@ -669,12 +669,46 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="4697F8A7-A5BE-4DCA-A331-A9AD156F4184" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="3cb-TD-X1A">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Nu7-9m-5ol"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="e1j-hg-QAW"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="mrj-0H-1wb"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="cic-Rf-8yd"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="hAq-dY-eYa"/>
+                                <toolbarItem implicitItemIdentifier="0CD00EE8-D003-43BA-BDDC-A07170B3261D" label="Background Colour" paletteLabel="Background Colour" id="ush-rj-7R4">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="44" height="23"/>
+                                    <size key="maxSize" width="44" height="23"/>
+                                    <colorWell key="view" id="PDq-My-VY5">
+                                        <rect key="frame" x="32" y="14" width="44" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </colorWell>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="BF3F878E-14D0-4A96-B5DA-5A3FC5E83942" label="Ink Colour" paletteLabel="Ink Colour" id="qPk-EC-oCN">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="44" height="23"/>
+                                    <size key="maxSize" width="44" height="23"/>
+                                    <colorWell key="view" id="C0U-dv-iFE">
+                                        <rect key="frame" x="9" y="14" width="44" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </colorWell>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="ush-rj-7R4"/>
+                                <toolbarItem reference="qPk-EC-oCN"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="5gI-5U-AMq" kind="relationship" relationship="window.shadowedContentViewController" id="nsd-lR-9xd"/>
                     </connections>
                 </windowController>
                 <customObject id="6f7-a7-6o1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="DnG-py-J86"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>

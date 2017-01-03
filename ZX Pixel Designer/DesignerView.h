@@ -11,5 +11,6 @@
 @interface DesignerView : NSView
 
 @property (strong) CALayer *imageLayer;
+@property (strong) CALayer *tempLayer;
 
 @end

@@ -9,12 +9,15 @@
 #import "ViewController.h"
 #import "Document.h"
 #import "DesignerView.h"
+#import "Action.h"
+
 
 #pragma mark - Private Interface
 
+
 @interface ViewController ()
 {
-    NSBezierPath *_path;
+    ActionType _currentActionType;
 }
 
 @end
@@ -30,59 +33,44 @@
 {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view.
-    self.document = [Document new];
     [(DesignerView *)self.designerScrollView.documentView setFrameSize:(NSSize){256, 192}];
+    self.document = [Document new];
+    _currentActionType = ActionTypeDrawLine;
 }
 
 
-- (void)setRepresentedObject:(id)representedObject
-{
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
-}
+#pragma mark - Mouse Events
 
 
 - (void)mouseDown:(NSEvent *)event
 {
-    NSPoint point = [self.designerView convertPointToLayer:event.locationInWindow];
-    [self updatePixelAtPoint:point withEvent:event];
-    [self.document mouseDownAtPoint:[self.view convertPoint:event.locationInWindow toView:self.designerScrollView.documentView]];
+    NSPoint point = [self.view convertPoint:event.locationInWindow toView:self.designerView];
+    [self.document mouseDownAtPoint:point withActionType:_currentActionType];
+    self.designerView.tempLayer.contents = CFBridgingRelease(self.document.tempImage);
 }
 
 
 - (void)mouseUp:(NSEvent *)event
 {
-    [self.document mouseUp];
+    NSPoint point = [self.view convertPoint:event.locationInWindow toView:self.designerView];
+    [self.document mouseUpAtPoint:point withActionActionType:_currentActionType];
+    self.designerView.imageLayer.contents = CFBridgingRelease(self.document.image);
 }
 
 
 - (void)mouseDragged:(NSEvent *)event
 {
-    NSPoint point = [self.designerView convertPointToLayer:event.locationInWindow];
-    [self updatePixelAtPoint:point withEvent:event];
-    [self.document mouseDraggedAtPoint:[self.view convertPoint:event.locationInWindow toView:self.designerScrollView.documentView]];
+    NSPoint point = [self.view convertPoint:event.locationInWindow toView:self.designerView];
+    [self.document mouseDraggedAtPoint:point withActionType:_currentActionType];
+    self.designerView.tempLayer.contents = CFBridgingRelease(self.document.tempImage);
 }
 
-- (void)updatePixelAtPoint:(NSPoint)windowLocation withEvent:(NSEvent *)event
-{
-    NSPoint documentLocation = [self.view convertPoint:windowLocation toView:self.designerScrollView.documentView];
-    
-    if (event.modifierFlags & NSEventModifierFlagShift)
-    {
-        [self.document unsetPixelAtPoint:documentLocation];
-    }
-    else
-    {
-        [self.document setPixelAtPoint:documentLocation];
-    }
-    self.designerView.imageLayer.contents = CFBridgingRelease(self.document.image);
-}
 
 - (void)mouseMoved:(NSEvent *)event
 {
-    NSPoint point = [self.view convertPoint:event.locationInWindow toView:self.designerScrollView.documentView];
+    NSPoint point = [self.view convertPoint:event.locationInWindow toView:self.designerView];
+    [self.document mouseMovedAtPoint:point withActionType:_currentActionType];
 }
+
 
 @end

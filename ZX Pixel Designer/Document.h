@@ -7,16 +7,34 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Action.h"
+
+#pragma mark - Types
+
+
+#pragma mark - Forward References
+
+
+@class ImageModel;
+
+
+#pragma mark - Interface
+
 
 @interface Document : NSDocument
 
-@property (assign, nonatomic) CGImageRef image;
 
-- (void)setPixelAtPoint:(NSPoint)point;
-- (void)unsetPixelAtPoint:(NSPoint)point;
-- (void)mouseDraggedAtPoint:(NSPoint)point;
-- (void)mouseDownAtPoint:(NSPoint)point;
-- (void)mouseUp;
+// Properties
+@property (strong) ImageModel *imageModel;
+@property (assign, nonatomic) CGImageRef image;
+@property (assign, nonatomic) CGImageRef tempImage;
+
+
+// Methods
+- (void)mouseDownAtPoint:(NSPoint)point withActionType:(ActionType)actionType;
+- (void)mouseDraggedAtPoint:(NSPoint)point withActionType:(ActionType)actionType;
+- (void)mouseUpAtPoint:(NSPoint)point withActionActionType:(ActionType)actionType;
+- (void)mouseMovedAtPoint:(NSPoint)point withActionType:(ActionType)actionType;
 
 @end
 
